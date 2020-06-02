@@ -172,7 +172,7 @@ y''_{zz} = \tau'_z = \tau'_y y' = \tau'_y\tau.
 \end{align}
 где $b$ и $c$ -- произвольные константы.
 Выражение~\eqref{eq:parameter_a} является, по своей сути, условием самосогласования на параметр $a$, так как $J$ и $J_1$, в свою очередь, зависят от $a$.
-\paragraph{Линейное решение}
+\section{Линейное решение}
 Отметим, что из-за требования $y\in C^2[0,\, L]$ кусочно-заданная функция, состоящая из линейных функций~\eqref{eq:linear_solution} решением быть не может.
 Подставляя линейное решение~\eqref{eq:linear_solution} в уравнение~\eqref{eq:parametric_EL}, приходим к следующему равенству:
 \begin{equation*}
@@ -181,7 +181,7 @@ y''_{zz} = \tau'_z = \tau'_y y' = \tau'_y\tau.
 Это требование может быть выполнено только в тривиальном случае $U = 0$.
 Таким образом, в дальнейшем будем рассатривать только параболическое решение~\eqref{eq:parabolic_solution} с учётом ограничения~\eqref{eq:rectangle_2} на $y(z)$.
 Это требование совместно с условиями на границах ячейки~\eqref{eq:boundary1_ch5} и~\eqref{eq:boundary2_ch5}, а также условием самосогласования~\eqref{eq:parameter_a} позволяет определить параметры $a$, $b$ и $c$.
-\paragraph{Чисто параболическое решение}
+\section{Параболическое решение без участков насыщения}
 Проверим возможность существования параболического решения $y(z)$ вида~\eqref{eq:parabolic_solution}, для которого было бы выполнено условие $y(z) \in (\ve_\|/\ve_a,\, \ve_\bot/\ve_a) \forall z\in[0,\, L]$.
 На языке множеств $A$ и $B$ этот случай соответствует пустому множеству $B$.
 Решение должно обладать следующими свойствами:
@@ -335,13 +335,13 @@ g_1 = \gamma g_2.
 
 Рассмотрим теперь ``нижний'' знак при $\gamma$.
 В этом случае неравенство~\eqref{eq:ch5_some_system_b} принимает вид
-\begin{equation}
+\begin{equation}\label{eq:ch5_right_border_ineq}
 	\left( g_2 + \frac{2(1 - \gamma^{-1})}{L} \right) \delta y(L) \geq 0.
 \end{equation}
 Знак выражения в скобках определяет, какого знака должна быть вариация $\delta y(L)$.
 Заметим, что с ростом $U$ значение $\gamma^{-1}$ также монотонно растёт.
 Следовательно, существует некоторое значение напряжения $U = \tilde{U}$ такое, что при $U < \tilde{U}$, $\delta y(L) > 0$, а при $U > \tilde{U}$, $\delta y(L) < 0$.
-Найти напряжение $\tilde{U}$ можно, приравнивая значение выражения в скобках в формуле~\eqref{eq:ch5_case_low_sign_ineq} к нулю.
+Найти напряжение $\tilde{U}$ можно, приравнивая значение выражения в скобках в формуле~\eqref{eq:ch5_right_border_ineq} к нулю.
 После несложных преобразований получим:
 \begin{equation}
 	\tilde{U} = \frac{8\pi \bar{e}}{\ve_a} \ln \left( 1 + \frac{\ve_a W_2 L}{16\pi \bar{e}^2} \right).
@@ -372,7 +372,7 @@ g_1 = \gamma g_2.
 При этом неравенство~\eqref{eq:ch5_case_1_ineq} выполнено при $\hat{\gamma}' < \gamma \leq 1$, что в терминах напряжений соответствует $0 \leq U < \hat{U}'$, $\hat{U}':\hat{\gamma}' = \gamma(\hat{U}')$.
 Приведём точное выражение для $\hat{\gamma}'$ и соответствующего напряжения $\hat{U}'$:
 \begin{align}
-	&\hat{\gamma}' = \frac{2\ve_\|}{\ve_\bot} - 1 - \frac{2\ve_\|}{\ve_\bot} \sqrt{1 - \frac{\ve_\bot}{\ve_\|}},\\
+	&\hat{\gamma}' = \frac{2\ve_\|}{\ve_\bot} - 1 - \frac{2\ve_\|}{\ve_\bot} \sqrt{\frac{\ve_a}{\ve_\|}},\\
 	&\hat{U}' = \frac{8\pi\bar{e}}{\ve_a}\ln\left( \frac{1}{\hat{\gamma}'} \right).
 \end{align}
 Напомним, что условие $U < \tilde{U}$ соответствует неравенству, заменяющему граничное условие на границе $z = L$, а условие $U < \hat{U}'$ соответствует требованию, чтобы вершина параболы не выходила за гарницы обозначенного прямоугольника.
@@ -395,19 +395,104 @@ g_1 = \gamma g_2.
 \begin{figure}
 	\centering
 	\includegraphics[width = 17pc]{ch5_profile_2.eps}
-	\caption{Схематическое изображение профилей без участков насыщения при $\mu_0 = \ve_\bot/\ve_a$ и $\mu_L = \ve_\|/\ve_a$.}\label{fig:ch5_profile_2}
+	\caption{Схематическое изображение параболических профилей без участков насыщения при $\mu_0 = \ve_\bot/\ve_a$ и $\mu_L = \ve_\|/\ve_a$.}\label{fig:ch5_profile_2}
 \end{figure}
 Проверим, при каких значениях напряжения $U$ выполнено условие на вершину параболы.
 В данном случае может быть выполнено только первое условие из совокупности~\eqref{eq:ch5_parabolic_system_5}.
+Подставляя в выражение для коэффициента $b$~\eqref{eq:ch5_parabolic_coeff_system_1} ``нижний'' знак при $\gamma$ и исследуемые значения $\mu_{0, L}$, запишем первое условие  из~\eqref{eq:ch5_parabolic_system_5}:
+\begin{subequations}
+	\begin{empheq}[left = \empheqlbrack]{align}
+		&\frac{L}{2}\left( \frac{-\gamma}{\frac{\ve_\|}{\ve_\bot} - \gamma} + \frac{1}{1 - \gamma} \right) < 0,\label{eq:ch5_system_2_a}\\
+		&\frac{L}{2}\left( \frac{-\gamma}{\frac{\ve_\|}{\ve_\bot} - \gamma} + \frac{1}{1 - \gamma} \right) > L.\label{eq:ch5_system_2_b}
+	\end{empheq}
+\end{subequations}
+Рассмотрим неравенство~\eqref{eq:ch5_system_2_a}.
+После несложных преобразований можно прийти к следующей записи:
+\begin{equation}\label{eq:ch5_case_2_ineq_1}
+	\frac{1}{1 - \gamma} < \frac{\gamma}{\frac{\ve_\|}{\ve_\bot} - \gamma}
+\end{equation}
+Заметим, что $\ve_\|/\ve_\bot > 1$ (так как рассматривается случай $\ve_a > 0$), а $\gamma < 1$.
+Отсюда можно сделать вывод, что неравенство~\eqref{eq:ch5_case_2_ineq_1} не может быть выполнено.
+Отсюда также следует, что профиль, обозначенный на Рис.~\ref{fig:ch5_profile_2} пунктирной линией, не может быть равновесным.
+
+Рассмотрим неравенство~\eqref{eq:ch5_system_2_b}.
+Его при помощи алгебраических преобразований можно свести к следующему виду:
+\begin{equation}\label{eq:ch5_case_2_ineq_2}
+	(1 - \gamma)^2 < (2\gamma -1)\frac{\ve_a}{\ve_\bot}.
+\end{equation}
+Графики функций $f_1(\gamma) = (1-\gamma)^2$ и $f_2(\gamma) = (2\gamma - 1)\ve_a/\ve_\bot$ представлены на Рис.~\ref{fig:ch5_graph_solver_2}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=20pc]{ch5_graph_solver_2.eps}
+	\caption{Графики функций $y = f_1(\gamma)$ и $y = f_2(\gamma)$. Цветом выделен участок на оси $\gamma$, соответствующий решению неравенства~\eqref{eq:ch5_case_2_ineq_2}.}\label{fig:ch5_graph_solver_2}
+\end{figure}
+Здесь при построении графика учтено, как соотносятся значения обеих функций при $\gamma = 0$ и $\gamma = 1$.
+Таким образом, неравенство~\eqref{eq:ch5_case_2_ineq_2} выполнено, когда $\gamma\in(\hat{\gamma}_1,\,1]$, что соответствует $U\in[0,\, \hat{U}_1)$.
+Решая квадратное уравнение, можно получить точное выражение для $\hat{\gamma}_1$ и напряжения $\hat{U}_1$:
+\begin{align}
+	&\hat{\gamma}_1 = \frac{\ve_\|}{\ve_\bot} + \frac{\ve_\|}{\ve_\bot}\sqrt{\frac{\ve_a}{\ve_\|}},\\
+	&\hat{U}_1 = \frac{8\pi \bar{e}}{\ve_a}\ln\left( \frac{1}{\hat{\gamma}_1} \right)
+\end{align}
+Вновь, условие $U > \tilde{U}$ отвечает за выполнение неравенства~\eqref{eq:ch5_right_border_ineq} на правой границе, а условие $U < \hat{U}_1$ порождено требованием на вершину параболы.
+
+Таким образом, можно видеть, что при
+\begin{equation}\label{eq:ch5_case_2_ineq_3}
+\tilde{U} < U < \hat{U}_1)
+\end{equation}
+устойчива ориентационная структура, профиль $y(z)$ которой обозначен на Рис.~\ref{fig:ch5_profile_2} сплошной линией.
+Подставляя в~\eqref{eq:ch5_parabolic_system_1} выражения для коэффициентов~\eqref{eq:ch5_parabolic_coeff_system} с учётом $\mu_0 = \ve_\bot/\ve_a$, $\mu_L = \ve_\|/\ve_a$ и ``нижнего'' при $\gamma$, получим уравнение этого профиля в явном виде:
+\begin{multline}
+	y(z) = -\frac{\ve_\bot}{\ve_a}\cdot\frac{(1-\gamma)\left(\frac{\ve_\|}{\ve_\bot} - \gamma \right)}{\gamma}\left[ \frac{z}{L} - \frac{1}{2}\cdot\frac{(1 - \gamma)^2 + \frac{\ve_a}{\ve_\bot}}{(1 - \gamma)\left( \frac{\ve_\|}{\ve_\bot} - \gamma \right)} \right] +\\
+	+ \frac{\ve_\bot}{\ve_a}\cdot\frac{\left( \frac{\ve_\|}{\ve_\bot} - \gamma^2 \right)^2}{\gamma(1-\gamma)\left( \frac{\ve_\|}{\ve_\bot} - \gamma \right)}.
+\end{multline}
+
+Заметим, что для того, чтобы интервал напряжений, задаваемый двойным неравенством~\eqref{eq:ch5_case_2_ineq_3}, был непустым, также необходимо, чтобы выполнялось следующее неравенство:
+\begin{equation}
+	\tilde{U} < \hat{U}_1
+\end{equation}
+Для дальнейшего анализа удобно ввести обозначение
+\begin{equation}
+	\varkappa = \sqrt{\frac{\ve_\|}{\ve_a}}
+\end{equation}
+и записать найденные выше характеристические напряжения $\tilde{U}$, $\hat{U}'$ и $\hat{U}_1$ с его помощью:
+\begin{subequations}\label{eq:ch5_case_2_ineqs_4}
+	\begin{align}
+		&\tilde{U} = \frac{8\pi\bar{e}}{\ve_a}\ln\left( 1 + \frac{g_2 L}{2} \right),\\
+		&\hat{U}' = \frac{8\pi\bar{e}}{\ve_a}\ln\frac{\varkappa + 1}{\varkappa - 1},\\
+		&\hat{U}_1 = \frac{8\pi\bar{e}}{\ve_a}\ln\frac{\varkappa + 1}{\varkappa}.
+	\end{align}
+\end{subequations}
+Отметим, что $\hat{U}' < \hat{U}_1$.
+Значит, остаётся три возможных варианта взаимного расположения напряжений:
+\begin{subequations}
+	\begin{align}
+		&\hat{U}' < \hat{U}_1 < \tilde{U},\\
+		&\hat{U}' < \tilde{U} < \hat{U}_1,\\
+		&\tilde{U} < \hat{U}' < \hat{U}_1.
+	\end{align}
+\end{subequations}
+С учётом явно выраженный напряжений~\eqref{eq:ch5_case_2_ineqs_4} эти неравенства можно переписать следующим образом:
+\begin{subequations}\label{eq:ch5_case_2_ineqs_5}
+	\begin{align}
+		&\frac{4}{\varkappa - 1} < \frac{2}{\varkappa} < g_2 L,\\
+		&\frac{4}{\varkappa - 1} < g_2 L < \frac{2}{\varkappa},\\
+		&g_2 L < \frac{4}{\varkappa - 1} < \frac{2}{\varkappa}.
+	\end{align}
+\end{subequations}
+Видно, что параметром, который отвечает за то, какой сценарий будет реализован в данной системе (при данном наборе параметров), является $g_2 L$.
+Выясним, каким именно сценариям трансформации ориентационной структуры с изменнением $U$ соответствуют ситуации~\eqref{eq:ch5_case_2_ineqs_5}.
+\begin{itemize}
+	\item Случай ``сильного'' сцепления, $4/(\varkappa - 1) < 2/\varkappa < g_2 L$
+	\item Случай ``среднего'' сцепления, $4/(\varkappa - 1) < g_2 L < 2/\varkappa$
+	\item Случай ``слабого'' сцепления, $g_2 L < 4/(\varkappa - 1) < 2/\varkappa$
+\end{itemize}
+
+\todo{Продолжение: описания случаев словами, схемами.}
+
+\todo{(Далее)} Выясним, какой параметр отвечает за то, какое переходное напряжение будет меньше, $\tilde{U}$ или $\hat{U}'$.
 
 
-\todo{Продолжение работы: дорешать уравнение $-b>L$, посмотреть, не заменить ли тут всё на $\varkappa$}
-
-
-\todo{(Потом)} Выясним, какой параметр отвечает за то, какое переходное напряжение будет меньше, $\tilde{U}$ или $\hat{U}'$.
-
-
-\paragraph{Решения с участком насыщения}
+\section{Решения с участком насыщения}
 
 \todo{Далее -- под переделку, выше -- переписанное.}
 

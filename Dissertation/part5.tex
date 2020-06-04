@@ -368,7 +368,7 @@ g_1 = \gamma g_2.
 	\includegraphics[width=20pc]{ch5_graph_solver_1.eps}
 	\caption{Графики функций $y = f_1(\gamma)$ и $y = f_2(\gamma)$. Цветом выделен участок на оси $\gamma$, соответствующий решению неравенства~\eqref{eq:ch5_case_1_ineq}.}\label{fig:ch5_graph_solver_1}
 \end{figure}
-При построении графиков учтено, что $f_2(0) < f_2(0)$ и $f_2(1) > f_1(1)$, следовательно, на интервале $(0,\, 1)$ существует $\hat{\gamma}'$ такая, что $f_1(\hat{\gamma}') = f_2(\hat{\gamma}')$.
+При построении графиков учтено, что $f_2(0) < f_1(0)$ и $f_2(1) > f_1(1)$, следовательно, на интервале $(0,\, 1)$ существует $\hat{\gamma}'$ такая, что $f_1(\hat{\gamma}') = f_2(\hat{\gamma}')$.
 При этом неравенство~\eqref{eq:ch5_case_1_ineq} выполнено при $\hat{\gamma}' < \gamma \leq 1$, что в терминах напряжений соответствует $0 \leq U < \hat{U}'$, $\hat{U}':\hat{\gamma}' = \gamma(\hat{U}')$.
 Приведём точное выражение для $\hat{\gamma}'$ и соответствующего напряжения $\hat{U}'$:
 \begin{align}
@@ -532,6 +532,33 @@ g_1 = \gamma g_2.
 \end{itemize}
 
 \section{Решения с участком насыщения}
+
+Рассмотрим решения с единственным участком насыщения.
+Расчёт равновесных профилей при помощи прямой минимизации свободной энергии проказал, что при $\ve_a, U > 0$ возникают профили только трёх типов.
+Они схематически изображены на Рис.~\ref{fig:ch5_profiles_saturated}
+\begin{figure}
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{ch5_profiles_saturated_a.eps}
+		{А}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{ch5_profiles_saturated_b.eps}
+		{Б}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{ch5_profiles_saturated_c.eps}
+		{В}
+	\end{minipage}
+	\vspace{0.5cm}
+	\caption{Схематическое изображение различных видов профилей с участками насыщения, полученных при помощи численной минимизации свободной энергии.}
+	\label{fig:ch5_profiles_saturated}
+\end{figure}
+
 
 \section{Сравнение аналитических результатов с расчётными}
 В заключение приведём сравнение профилей, рассчитанных при помощи полной модели свободной энергии (\todo{x.xx}) и профилей, полученных аналитически нна основе анализа сокращённой модели свободной энергии (\todo{y.yy}).

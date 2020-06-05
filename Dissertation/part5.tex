@@ -535,7 +535,7 @@ g_1 = \gamma g_2.
 
 Рассмотрим решения с единственным участком насыщения.
 Расчёт равновесных профилей при помощи прямой минимизации свободной энергии проказал, что при $\ve_a, U > 0$ возникают профили только трёх типов.
-Они схематически изображены на Рис.~\ref{fig:ch5_profiles_saturated}
+Они схематически изображены на Рис.~\ref{fig:ch5_profiles_saturated}.
 \begin{figure}
 	\begin{minipage}{0.32\textwidth}
 		\centering
@@ -558,6 +558,67 @@ g_1 = \gamma g_2.
 	\caption{Схематическое изображение различных видов профилей с участками насыщения, полученных при помощи численной минимизации свободной энергии.}
 	\label{fig:ch5_profiles_saturated}
 \end{figure}
+Перед тем, как мы начнём получать их уравнения, отметим следующую особенность: в данном случае искомая функция $y(z)$ состоит из нескольких частей.
+При этом на каждую точку сшивания $z_0$ добавляется ещё по два условия: на функцию, $y(z_0 - 0) = y(z_0 + 0)$, и на производную, $y'(z_0 - 0) = y'(z_0 + 0)$.
+
+\paragraph{Случай А. Симметричный профиль с участком насыщения.}
+В данном случае необходимо найти две функции, $y_1(z)$ и $y_3(z)$, определённые на отрезках $[0, \, \alpha L]$ и $[\beta L,\, L]$ соответственно.
+Отметим, что и $y_1$, и $y_3$ должны решать одно и то же уравнение~\eqref{eq:parametric_EL}, а значит, обе они имеют вид~\eqref{eq:parabolic_solution} с общим коэффициентом $a$ и отличаясь только коэффициентами $b$ и $c$ ($b_1$, $c_1$ и $b_3$ и $c_3$ соответственно).
+Запишем ``геометрические'' условия на функцию $y_1(z)$:
+\begin{subequations}\label{eq:ch5_saturated_case_a_system_1}
+	\begin{empheq}[left = \empheqlbrace]{align}
+		&y_1(z) = \frac{c_1}{4}(z + b_1)^2 - \frac{a^2}{c_1},\label{eq:ch5_saturated_case_a_system_1_1}\\
+		&y_1(0) = \frac{\ve_\bot}{\ve_a},\label{eq:ch5_saturated_case_a_system_2}\\
+		&y_1(\alpha L) = \frac{\ve_\|}{\ve_a},\label{eq:ch5_saturated_case_a_system_3}\\
+		&y_1'(\alpha L) = 0.\label{eq:ch5_saturated_case_a_system_4}
+	\end{empheq}
+\end{subequations}
+Нетрудно видеть, что требование сшивания производных может быть выполнено тогда и только тогда, когда вершина параболы $y_1(z)$ находится в точке с координатами $(\alpha L,\, \ve_\|/\ve_a)$, а значит, $b_1 = -\alpha L$.
+Подстановка~\eqref{eq:ch5_saturated_case_a_system_1} в~\eqref{eq:ch5_saturated_case_a_system_2} и~\eqref{eq:ch5_saturated_case_a_system_3} приводит к следующему виду $y_1(z)$:
+\begin{equation}
+	y_1(z) = -\left( \frac{z}{\alpha L} - 1 \right)^2 + \frac{\ve_\|}{\ve_a}.
+\end{equation}
+Аналогичные рассуждения можно провести и для $y_3(z)$.
+Отметим, что условия $y_1(0) = y_3(L)$ и $y_1(\alpha L) = y_3(\beta L)$ приводят к тому, что параболы $y_1(z)$ и $y_3(z)$ оказываются симметричными относительно $z = L/2$.
+Это означает, в частности, что $\alpha = 1 - \beta$.
+Таким образом, для $y_3(z)$ имеем:
+\begin{equation}
+y_3(z) = -\left( \frac{z}{\alpha L} - \frac{1}{\alpha} + 1 \right)^2 + \frac{\ve_\|}{\ve_a}.
+\end{equation}
+Кроме того, из этих же условий можно получить следующе выражение для $a$:
+\begin{equation}\label{eq:ch5_saturated_case_a_eq_1}
+	a = -\frac{2\varkappa}{\alpha L}.
+\end{equation}
+Для того, чтобы определить значение параметра $\alpha$, следует подставить полученную зависимость $y(z)$ в условие самосогласования~\eqref{eq:parameter_a}:
+\begin{equation}\label{eq:ch5_saturated_case_a_eq_2}
+	a\frac{(1 - 2\alpha)L}{2\varkappa^2} = \ln\left( \gamma \frac{\varkappa + 1}{\varkappa - 1} \right).
+\end{equation}
+Подставляя~\eqref{eq:ch5_saturated_case_a_eq_1} в~\eqref{eq:ch5_saturated_case_a_eq_2}, можно получить окончательное выражение для $1/\alpha$:
+\begin{equation}
+	\frac{1}{\alpha} = 2 - \varkappa\ln\left( \gamma\frac{\varkappa + 1}{\varkappa - 1} \right).
+\end{equation}
+Учитывая, что $\alpha$ ограниченa:
+\begin{equation}
+	0 < \alpha \leq \frac{1}{2},
+\end{equation}
+можно заметить, что в данном случае существует ограничение на $\gamma$:
+\begin{equation}
+	\gamma < \frac{\varkappa - 1}{\varkappa + 1}.
+\end{equation}
+Заметим, что в предыдущей части мы установили, что...
+
+Остаётся проверить, что выполнены граничные условия~\eqref{eq:ch5_parabolic_system_6} и~\eqref{eq:ch5_parabolic_system_7}.
+Подстановка $y_1(z)$ в первое из них даёт
+\begin{equation}
+	g_1(\varkappa - 1)(\varkappa + 1) > \frac{2}{\alpha L}(1 - \varkappa),
+\end{equation}
+что верно всегда, поскольку $\varkappa > 1$.
+Подстановка $y_3(z)$ во второе условие приводит к неравенству
+\begin{equation}
+	g_2 L > \frac{2}{\alpha(\varkappa - 1)}.
+\end{equation}
+Его можно интерпретировать следующим образом: так как $\alpha = \alpha(U)$, причём с ростом напряжения $\alpha$ монотонно уменьшается, то будет существовать некоторое критическое...
+
 
 
 \section{Сравнение аналитических результатов с расчётными}

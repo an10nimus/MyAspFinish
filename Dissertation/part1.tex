@@ -251,3 +251,120 @@ E(z)=\left(UJ+ 4\pi\bar{e}(\sin2\theta \, \theta'-J_1J) \right)/{\EE}(\theta).
 \begin{equation}\label{eqAAtilde}
 \AA(\theta) =A(\theta) +4\pi \bar{e}^2{\sin^22\theta}/{\EE}(\theta),\; \EuScript{U}=U-4\pi \bar{e}J_1,
 \end{equation}
+
+
+\section{Система уравнений Эйлера-Лагранжа и упрощение функционала свободной энергии}\label{sec:ch2/sec1}
+Первая вариация свободной энергии~\eqref{eq:free-energy} может быть записана следующим образом:
+\begin{multline}
+	\delta \FF_\mathrm{tot} = S_{\!\bot} \left\{\int_0^L \left[ {\frac12\frac{d\AA}{d\theta}\, \theta'^2 \delta\theta + \AA\theta' \delta\theta'} + \frac12\frac{d B}{d\theta}\,\phi'^2\delta\theta\right. + \right.\\
+	\left.+ B \phi' \delta \phi'- \frac{d C}{d\theta}\,\phi'\delta\theta - C\delta\phi'\right]\, dz + \\
+	{+\frac12\!\sum_{\alpha=1,2}\left(W_\theta^{(\alpha)}\!\sin2(\theta_\alpha- \theta_0^{(\alpha)})\delta\theta_\alpha + W_\phi^{(\alpha)}\!\sin2(\phi_\alpha - \phi_0^{(\alpha)})\delta\phi_\alpha\right)} + \\
+	\left. {+\frac{\varepsilon_a}{8\pi} \EuScript{U}^2J^2\int_0^L \frac{\sin 2\theta }{\EE^{2}(\theta)}\delta\theta\, dz
+		+\left.\bar{e}\EuScript{U} J \frac{\sin 2\theta }{\EE(\theta)}\delta\theta\right|^L_0
+	}\right\}.
+	\label{deltaF_tot}
+\end{multline}
+Проинтегрировав по частям вклады в $\delta\FF_\mathrm{tot}$, содержащие вариации производных и приравнивая к нулю $\delta \FF_\mathrm{tot}$ для произвольных вариаций $\delta\theta$ и $\delta\phi$ в объёме и на границах, получаем систему из двух уравнений Эйлера-Лагранжа 
+\begin{eqnarray}
+	&&\frac{d\AA}{d\theta}\theta'^2 + 2\AA \theta'' = \frac{d B}{d\theta}\phi'^2 - 2\frac{d C}{d\theta}\phi'
+	+ \frac{\varepsilon_a\EuScript{U}^2\! J ^2\!\sin 2\theta}{4\pi\EE^2(\theta)} ,
+	\label{eq:E-L1}\\
+	&&{d}\left( B\phi' - C \right)/{dz} = 0,
+	\label{eq:E-L2}
+\end{eqnarray}
+и двух граничных условий
+\begin{eqnarray}
+	&&\left(2(-1)^\alpha [{\AA(\theta)\theta'} + \bar{e} {\EuScript{U}}J\sin2\theta/\EE(\theta)]\phantom{ W_\phi^{(\alpha)}}\right. + \nonumber\\
+	&&\hspace{27mm}\left.\left.+ W_\theta^{(\alpha)}\sin2(\theta - \theta_0^{(\alpha)})\right) \right|_{z=l_\alpha} = 0,\label{eq:gran-1}\\
+	&&{\left.\left(2(-1)^\alpha (B\phi' - C)
+		+W_\phi^{(\alpha)}\sin2(\phi - \phi_0^{(\alpha)})\right) \right|_{z=l_\alpha}} = 0,
+	\label{eq:gran-2}
+\end{eqnarray}
+где $\alpha = 1, 2$.
+Из уравнений~\eqref{eq:E-L1} и~\eqref{eq:E-L2} можно сделать вывод, что функция $\theta(z)\in C^2[0,\, L]$, а $\phi(z)\in C^1[0,\, L]$.
+Заметим, что~\eqref{eq:E-L1} -- функциональное интегро-дифференциальное уравнение, так как $J_1$ зависит от значений $\theta(z)$ на границах, а $J$ содержит интеграл~\eqref{eqD_z}.
+Кроме того, граничные условия~\eqref{eq:gran-1} являются нелокальными.
+Данные свойства, как уравнения, так и граничных условий, возникли благодаря учёту флексоэлектрической поляризации.
+
+Первый интеграл системы уравнений~\eqref{eq:E-L1} и~\eqref{eq:E-L2} выглядит следующим образом:
+\begin{eqnarray}
+	&&{\AA(\theta)\theta'^2}+  B(\theta)\varphi'^2 {-\EuScript{U}^2 J ^2/(4\pi\EE(\theta))} =C_1,
+	\label{eq:theta'}\\
+	&&B(\theta)\phi' -C(\theta)= C_2,
+	\label{eq:phi'}
+\end{eqnarray}
+где $C_{1,2}$ -- произвольные константы.
+Конкретные значения этих констант могут быть найдены из граничных условий~\eqref{eq:gran-1} и~\eqref{eq:gran-2}.
+
+Ввиду сложности возникающих уравнений Эйлера-Лагранжа удобно искать равновесную ориентационную структуру ХЖК, используя прямые методы минимизации свободной энергии.
+При этом уравнение~\eqref{eq:phi'} и граничные условия~\eqref{eq:gran-2} позволяют упростить выражение для полной свободной энергии $\FF_\mathrm{tot}$, а уравнение~\eqref{eq:theta'} и граничные условия~\eqref{eq:gran-1} дают возможность контролировать точность результатов численных расчётов.
+В решении задачи поиска равновесных профилей углов оказывается возможным записать $\FF_\mathrm{tot}$ как функционал, зависящий только от $\theta(z)$.
+Для этого используем выражение для $\phi'$, полученное из соответствующего уравнения Эйлера-Лагранжа.
+Таким образом, мы будем рассматривать $\FF_\mathrm{tot}[\theta(z)]$, содержащий равновесное распределение $\phi(z)$, подстраивающееся под заданное распределение $\theta(z)$.
+%Ограничиваясь только равновесными профилями углов $\theta(z)$ и $\phi(z)$, можно записать $\FF_\mathrm{tot}$ как функционал, зависящий только от $\theta(z)$.
+
+Рассмотрим выражение~\eqref{eq:F_e_basic} для свободной энергии, связанной с объёмной ориентационной упругостью ХЖК.
+Подставив в него $\phi'$, выраженное из~\eqref{eq:phi'}, получим
+\begin{equation}
+	\FF_\mathrm{e} = \FF^{(0)}_\mathrm{e} + \frac{S_{\!\bot}}{2}\int_0^L \left[ A(\theta) \theta'^2 + \frac{C_2^2 - C^2(\theta)}{B(\theta)} \right]\, dz.
+	\label{eq:F_e_2}
+\end{equation}
+В выражение~\eqref{eq:F_e_2} входит константа $C_2$.
+Для того, чтобы определить её, проинтегрируем $\phi'$ из~\eqref{eq:phi'} по отрезку $[0,L]$:
+\begin{equation}
+	\phi_\mathrm{tot} = C_2 I_1 + I_2,
+	\label{eq:help_find_C1-2}
+\end{equation}
+где $\phi_\mathrm{tot}  =  \phi(L) - \phi(0)$,
+$$
+I_1 = \int_0^L \frac{dz}{B(\theta)}, \;
+I_2  =  \int_0^L \frac{C(\theta)}{B(\theta)}\, dz.
+$$
+Подставляя~\eqref{eq:phi'} в~\eqref{eq:gran-2}, получаем
+\begin{equation}
+	{2\left(\phi(l_\alpha)-\phi_0^{(\alpha)}\right)=(-1)^{\alpha+1}\arcsin\left(2C_2/W_\phi^{(\alpha)}\right)},
+	\label{eq:help_find_C1-0}
+\end{equation}
+$\alpha=1,2$, следовательно,
+\begin{equation}
+	\!\!{2(\phi_\mathrm{tot}^{(0)}-\phi_\mathrm{tot})
+		=\arcsin({2C_2}/{W_{\phi}^{(1)}})+\arcsin({2C_2}/{W_{\phi}^{(2)}})},
+	\label{eq:help_find_C1}
+\end{equation}
+где $\phi_\mathrm{tot}^{(0)}=\phi_0^{(2)}-\phi_0^{(1)}$.
+Здесь предполагается, что $\left|\phi(l_\alpha)-\phi_0^{(\alpha)}\right|\leq \pi/4$.
+Это ограничение соответствует отсутствию скачкообразных изменений шага спирали ХЖК~\autocite{BelyakovJumpsPhysRevE2005}.
+
+Из~\eqref{eq:help_find_C1-2} и \eqref{eq:help_find_C1} можно выразить константу $C_2$,
+\begin{equation}\label{eq:C2iteration}
+	C_2=(\varphi_\textrm{tot}^{(0)}-I_2)/\big(I_1+k_1/W^{(1)}_\varphi + k_2/W^{(2)}_\varphi \big),
+\end{equation}
+где $k_\alpha=\left(W^{(\alpha)}_\varphi/2C_2\right)\arcsin\left(2C_2/W^{(\alpha)}_\varphi \right)$, $1\leq k_\alpha\leq \pi/2$.
+Неравенства $\left|C_2\right|/W^{(\alpha)}_\varphi \leq 0.5$ должны выполняться, чтобы существовало решение трансцендентного уравнения~\eqref{eq:C2iteration}.
+Для случая $\left|C_2\right|/W^{(\alpha)}_\varphi \ll 1$ можно записать точное выражение для $C_2$:
+\begin{equation}\label{eq:C2implicit}
+	{C_2=(\varphi_\textrm{tot}^{(0)}-I_2)\left(I_1+{2}/{W_\phi^{H}}\right)^{-1}}
+\end{equation}
+где $W_\phi^{H} = {2W_\phi^{(1)}W_\phi^{(2)}}/(W_\phi^{(1)} + W_\phi^{(2)})$.
+
+
+Подставляя выражение~\eqref{eq:C2iteration} в~\eqref{eq:F_e_2} и используя~\eqref{eq:help_find_C1-0}, получаем следующее выражение для полной свободной энергии $\FF_\mathrm{tot}$ как функционала, зависящего только от $\theta(z)$:
+\begin{multline}
+	\FF_\mathrm{tot}(\theta) = \FF^{(0)}_e + \frac{S_{\!\bot}}{2}\Bigg[\int_0^L \left({ \AA(\theta)}\theta'^2 - \frac{C^2(\theta)}{B(\theta)} \right) dz +\\
+	+W_\theta^{(1)}\sin^2 \left( \theta(0) - \theta_0^{(1)} \right)+W_\theta^{(2)}\sin^2 \left( \theta(L) - \theta_0^{(2)} \right) +\\
+	+
+	C_2^2\left(I_1+{\kappa_1}/{W^{(1)}_\varphi}+{\kappa_2}/{W^{(2)}_\varphi}\right)-{\frac{\EuScript{U}^2 J}{4\pi} }\Bigg],
+	\label{eq:F_for_minimization}
+\end{multline}
+где $\kappa_\alpha=2/\Big(1+\sqrt{1-\big(2C_2/W^{(\alpha)}_\varphi\big)^2}\Big)$, $1\leq \kappa_\alpha\leq 2$.
+При $\left|C_2\right|/W^{(\alpha)}_\varphi \ll 1$ предпоследнее слагаемое в~\eqref{eq:F_for_minimization} может быть приближённо записано как
+\begin{equation}\label{LastTermFtot_theta_implicit}
+	\frac{S_{\!\bot}}{2}\left( \phi_\mathrm{tot}^{(0)} - I_2 \right)^2\left(I_1+{2}/{W_\phi^{H}}\right)^{-1}.
+\end{equation}
+Погрешность такой аппроксимации составляет около 2\% при $\left|C_2\right|/W^{(\alpha)}_\varphi \leq 0.25$ и около 15\% для всей области $\left|C_2\right|/W^{(\alpha)}_\varphi\leq 1/2$.
+
+После нахождения равновесной функции $\theta(z)$ можно найти соответствующую равновесную функцию $\phi(z)$, совмещая выражения~\eqref{eq:phi'}, \eqref{eq:gran-2} и~\eqref{eq:C2iteration}:
+\begin{equation}\label{eq:phi_profile}
+	\varphi(z)=\varphi_0^{(1)}+\frac12\arcsin\frac{2C_2}{W^{(1)}_\varphi}
+	+ \int_0^z \frac{C(\theta)+C_2}{B(\theta)}\, dz .
+\end{equation}

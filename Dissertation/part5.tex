@@ -583,7 +583,7 @@ g_1 = \gamma g_2.
 \end{subequations}
 Нетрудно видеть, что требование сшивания производных может быть выполнено тогда и только тогда, когда вершина параболы $y_1(z)$ находится в точке с координатами $(\alpha L,\, \ve_\|/\ve_a)$, а значит, $b_1 = -\alpha L$.
 Подстановка~\eqref{eq:ch5_saturated_case_a_system_1} в~\eqref{eq:ch5_saturated_case_a_system_2} и~\eqref{eq:ch5_saturated_case_a_system_3} приводит к следующему виду $y_1(z)$:
-\begin{equation}
+\begin{equation}\label{eq:ch5_saturated_case_a_eq_3}
 	y_1(z) = -\left( \frac{z}{\alpha L} - 1 \right)^2 + \frac{\ve_\|}{\ve_a}.
 \end{equation}
 Аналогичные рассуждения можно провести и для $y_3(z)$.
@@ -638,15 +638,52 @@ y_3(z) = -\left( \frac{z}{\alpha L} - \frac{1}{\alpha} + 1 \right)^2 + \frac{\ve
 \paragraph{Асимметричный профиль с насыщеной правой границей.}
 Рассмотрим профиль, схематически изображённый на Рис.~\ref{fig:ch5_profiles_saturated}\,Б.
 Будем искать решение вида
-\begin{equation}
+\begin{equation}\label{eq:ch5_saturated_case_b_start}
 y(z) = 
 \begin{cases}
 y_1(z),\quad z\in [0,\,\alpha L],\\
 \frac{\ve_\|}{\ve_a},\quad z\in (\alpha L,\, L].
 \end{cases}
 \end{equation}
-В данном случае необходимо найти единственную функцию $y_1(z)$, удовлетворяющую тем же условиям, что и одноимённая функция, найденная выше (система уравнений~\eqref{eq:ch5_saturated_case_a_system_1}).
+В данном случае необходимо найти единственную функцию $y_1(z)$, удовлетворяющую тем же условиям, что и одноимённая функция, найденная выше (система уравнений~\eqref{eq:ch5_saturated_case_a_system_1}); эти условия приводят к виду $y_1(z)$, повторяющему формулу~\eqref{eq:ch5_saturated_case_a_eq_3}:
+\begin{equation}\label{eq:ch5_saturated_case_b_eq_1}
+	y_1(z) = -\left( \frac{z}{\alpha L} - 1 \right)^2 + \frac{\ve_\|}{\ve_a}.
+\end{equation}
+Опять же, из этих условий можно получить выражение для $a$:
+\begin{equation}\label{eq:ch5_saturated_case_b_eq_2}
+	a = -\frac{2\varkappa}{\alpha L}.
+\end{equation}
+Подставляя~\eqref{eq:ch5_saturated_case_b_eq_1} в условие самосогласования~\eqref{eq:parameter_a}, получаем ещё одно уравнение:
+\begin{equation}\label{eq:ch5_saturated_case_b_eq_3}
+	a\frac{(1 - \alpha)L}{2\varkappa^2} = \ln\left( \gamma \frac{\varkappa + 1}{\varkappa} \right).
+\end{equation}
+Совмещая~\eqref{eq:ch5_saturated_case_b_eq_2} и~\eqref{eq:ch5_saturated_case_b_eq_3}, получаем выражение для $\alpha$:
+\begin{equation}\label{eq:ch5_saturated_case_b_eq_4}
+	\alpha = \left( 1 - \varkappa\ln\left( \gamma \frac{\varkappa + 1}{\varkappa} \right)\right)^{-1}.
+\end{equation}
+В данном случае мы также имеем ограничение на $\alpha$:
+\begin{equation}
+	0 < \alpha \leq 1.
+\end{equation}
+Видно, что это условие выполнено при $U > \hat{U}_1$, где $\hat{U}_1$ определено выражением~\eqref{eq:ch5_case_2_ineqs_5_c}.
 
+Наконец, проверим, когда выполняется условия на границах.
+подстановка $y_1(z)$ в~\eqref{eq:ch5_parabolic_system_6} приводит к тому же выражению, что было получено при рассмотрении предыдущего случая, а значит, и вывод совпадает: условие на границе $z = 0$ выполнено всегда.
+Далее, подставляя~\eqref{eq:ch5_saturated_case_b_start} в~\eqref{eq:ch5_parabolic_system_7}, получаем неравенство:
+\begin{equation}\label{eq:ch5_saturated_case_b_eq_5}
+	g_2 \varkappa^2 + a \leq 0,
+\end{equation}
+откуда, с учётом~\eqref{eq:ch5_saturated_case_b_eq_2} и~\eqref{eq:ch5_saturated_case_b_eq_4}, можно получить, что существует критическое напряжение $\hat{U}_2$ такое, что при $U > \hat{U}_2$ условие~\eqref{eq:ch5_saturated_case_b_eq_4} будет выполнено.
+Приведём явный вид выражения для $\hat{U}_2$:
+\todo{
+\begin{equation}
+	\hat{U}_2 = \hat{U}_1 + \frac{8\pi\bar{e}}{\ve_a}\cdot\frac{1}{\varkappa}\left( \frac{g_2 L}{2} - 1\right)
+\end{equation}
+}
+Отметим, что при рассмотрении данного вида профилей не возникает условия на $g_2 L$, а значит, такой профиль возникает в системе с любым значением $g_2 L$ при достаточно большом напряжении ($U > \hat{U}_2$).
+
+
+\paragraph{Асимметричный профиль с ненасыщеной правой границей.}
 
 \section{Сравнение аналитических результатов с расчётными}
 В заключение приведём сравнение профилей, рассчитанных при помощи полной модели свободной энергии (\todo{x.xx}) и профилей, полученных аналитически нна основе анализа сокращённой модели свободной энергии (\todo{y.yy}).

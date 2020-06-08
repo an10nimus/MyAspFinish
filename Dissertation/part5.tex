@@ -685,9 +685,54 @@ y_1(z),\quad z\in [0,\,\alpha L],\\
 
 \paragraph{Асимметричный профиль с ненасыщеной правой границей.}
 Рассмотрим профиль, схематически изображённый на Рис.~\ref{fig:ch5_profiles_saturated}\,В.
-
-
-
+Выпишем все уравнения, которым должно удовлетворять решение:
+\begin{subequations}\label{eq:ch5_saturated_case_c_system_1}
+	\begin{empheq}[left = \empheqlbrace]{align}
+		&y(0) = \frac{\ve_\bot}{\ve_a},\label{eq:ch5_saturated_case_c_system_1_1}\\
+		&y(\alpha L) = \frac{\ve_\|}{\ve_a},\\
+		&y(\beta L) = \frac{\ve_\|}{\ve_a},\\
+		&y'(\alpha L) = 0,\\
+		&y'(\beta L) = 0,\label{eq:ch5_saturated_case_c_system_1_5}\\
+		&aJ^{-1} = J_1 - \frac{U}{4\pi\bar{e}},\label{eq:ch5_saturated_case_c_system_1_6}\\
+		&y'(L) + a + g_2y(L) = 0,\label{eq:ch5_saturated_case_c_system_1_7}
+	\end{empheq}
+\end{subequations}
+и все неравенства:
+\begin{subequations}\label{eq:ch5_saturated_case_c_system_2}
+	\begin{empheq}[left = \empheqlbrace]{align}
+		&0 < \alpha < \beta < L,\\
+		&y(L) \geq \frac{\ve_\bot}{\ve_a},\label{eq:ch5_saturated_case_c_system_2_2}\\
+		& -(y'(0) + a) + g_1 y(0) \geq 0.\label{eq:ch5_saturated_case_c_system_2_3}
+	\end{empheq}
+\end{subequations}
+Решение будем искать в виде
+\begin{equation}
+	y(z) = 
+	\begin{cases}
+		\frac{c_1}{4}\left( z + b_1 \right)^2 - \frac{a^2}{c_1}, &z\in[0,\alpha L),\\
+		\frac{\ve_\|}{\ve_a}, &z\in[\alpha L,\, \beta L],\\
+		\frac{c_2}{4}\left( z + b_2 \right)^2, &z\in(\beta L,\, L].
+	\end{cases}
+\end{equation}
+Учёт уравнений~\eqref{eq:ch5_saturated_case_c_system_1_1} - \eqref{eq:ch5_saturated_case_c_system_1_5} позваляет записать $y_1(z)$ и $y_3(z)$ в следующем виде:
+\begin{align}\label{eq:ch5_saturated_case_c_y_cases}
+	&y_1(z) = -\left( \frac{z}{\alpha L} - 1 \right)^2 + \frac{\ve_\|}{\ve_a}\\
+	&y_3(z) = -\left( \frac{z}{\alpha L} - \frac{\beta}{\alpha} \right)^2 + \frac{\ve_\|}{\ve_a},\label{eq:ch5_saturated_case_c_eq_1}
+\end{align}
+Кроме того, остаётся справедливым равенство~\eqref{eq:ch5_saturated_case_b_eq_2}.
+Отметим, что подстановка~\eqref{eq:ch5_saturated_case_c_eq_1} в~\eqref{eq:ch5_saturated_case_c_system_2_2} приводит к следующему неравенству:
+\begin{equation}
+	\alpha \geq 1 - \beta.
+\end{equation}
+Далее, как и в предыдущих случаях, условие на границе $z = 0$ (неравенство~\eqref{eq:ch5_saturated_case_c_system_2_3}) оказывается выполненным всегда.
+Напротив, подставляя~\eqref{eq:ch5_saturated_case_c_eq_1} в условие на границе $z = L$ (уравнение~\eqref{eq:ch5_saturated_case_c_system_1_7}), получаем следующее равенство:
+\begin{equation}
+	(1 - \beta) - \varkappa\alpha = -\frac{2}{g_2 L}.
+\end{equation}
+Наконец, подстановка~\eqref{eq:ch5_saturated_case_c_y_cases} в условие самосогласования~\eqref{eq:ch5_saturated_case_c_system_1_6} после несложных преобразований даёт
+\begin{equation}
+	\frac{\frac{2}{g_2 L} + 1}{\varkappa\alpha} + \ln\alpha = \frac{\ve_a U}{8\pi\bar{e}}
+\end{equation}
 
 \section{Сравнение аналитических результатов с расчётными}
 В заключение приведём сравнение профилей, рассчитанных при помощи полной модели свободной энергии (\todo{x.xx}) и профилей, полученных аналитически нна основе анализа сокращённой модели свободной энергии (\todo{y.yy}).
